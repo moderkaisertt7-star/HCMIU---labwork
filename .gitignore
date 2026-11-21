@@ -1,0 +1,27 @@
+# Temporary files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+*.tmp
+*.temp
+*.bak
+
+# Build and binary files
+*.exe
+*.dll
+*.o
+*.obj
+*.out
+
+# OS specific
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/

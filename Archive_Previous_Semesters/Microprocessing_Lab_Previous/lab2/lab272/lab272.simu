@@ -1,0 +1,76 @@
+<circuit version="1.0.0-SR1" rev="1402" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<!-- ATmega32 MCU @ 16 MHz, 8-LED shift pattern -->
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="560,320" rotation="0" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="lab272/Debug/lab272.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="false" Wdt_enabled="false" />
+
+<!-- VCC for RST -->
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-1" mainComp="false" Show_id="false" Show_Val="false" Pos="460,244" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-1" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="false" Voltage="5 V" />
+
+<!-- ===== PD0 → LED0 ===== -->
+<item itemtype="Resistor" CircId="Resistor-PD0" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="716,400" rotation="0" hflip="1" vflip="1" label="R-D0" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+<item itemtype="Led" CircId="Led-PD0" mainComp="false" Show_id="false" Show_Val="false" Pos="780,400" rotation="0" hflip="1" vflip="1" label="LED0" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+<item itemtype="Ground" CircId="Ground-PD0" mainComp="false" Show_id="false" Show_Val="false" Pos="812,476" rotation="0" hflip="1" vflip="1" label="GND-D0" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Con-PD0-R" startpinid="mega32-1-PORTD0" endpinid="Resistor-PD0-lPin" pointList="608,400,640,400,640,400,700,400" />
+<item itemtype="Connector" uid="Con-R-LED0" startpinid="Resistor-PD0-rPin" endpinid="Led-PD0-lPin" pointList="732,400,764,400" />
+<item itemtype="Connector" uid="Con-LED0-GND" startpinid="Led-PD0-rPin" endpinid="Ground-PD0-Gnd" pointList="796,400,812,400,812,460" />
+
+<!-- ===== PD1 → LED1 ===== -->
+<item itemtype="Resistor" CircId="Resistor-PD1" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="716,424" rotation="0" hflip="1" vflip="1" label="R-D1" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+<item itemtype="Led" CircId="Led-PD1" mainComp="false" Show_id="false" Show_Val="false" Pos="780,424" rotation="0" hflip="1" vflip="1" label="LED1" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+<item itemtype="Ground" CircId="Ground-PD1" mainComp="false" Show_id="false" Show_Val="false" Pos="812,500" rotation="0" hflip="1" vflip="1" label="GND-D1" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Con-PD1-R" startpinid="mega32-1-PORTD1" endpinid="Resistor-PD1-lPin" pointList="608,408,640,408,640,424,700,424" />
+<item itemtype="Connector" uid="Con-R-LED1" startpinid="Resistor-PD1-rPin" endpinid="Led-PD1-lPin" pointList="732,424,764,424" />
+<item itemtype="Connector" uid="Con-LED1-GND" startpinid="Led-PD1-rPin" endpinid="Ground-PD1-Gnd" pointList="796,424,812,424,812,484" />
+
+<!-- ===== PD2 → LED2 ===== -->
+<item itemtype="Resistor" CircId="Resistor-PD2" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="716,448" rotation="0" hflip="1" vflip="1" label="R-D2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+<item itemtype="Led" CircId="Led-PD2" mainComp="false" Show_id="false" Show_Val="false" Pos="780,448" rotation="0" hflip="1" vflip="1" label="LED2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+<item itemtype="Ground" CircId="Ground-PD2" mainComp="false" Show_id="false" Show_Val="false" Pos="812,524" rotation="0" hflip="1" vflip="1" label="GND-D2" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Con-PD2-R" startpinid="mega32-1-PORTD2" endpinid="Resistor-PD2-lPin" pointList="608,416,640,416,640,448,700,448" />
+<item itemtype="Connector" uid="Con-R-LED2" startpinid="Resistor-PD2-rPin" endpinid="Led-PD2-lPin" pointList="732,448,764,448" />
+<item itemtype="Connector" uid="Con-LED2-GND" startpinid="Led-PD2-rPin" endpinid="Ground-PD2-Gnd" pointList="796,448,812,448,812,508" />
+
+<!-- ===== PD3 → LED3 ===== -->
+<item itemtype="Resistor" CircId="Resistor-PD3" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="716,472" rotation="0" hflip="1" vflip="1" label="R-D3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+<item itemtype="Led" CircId="Led-PD3" mainComp="false" Show_id="false" Show_Val="false" Pos="780,472" rotation="0" hflip="1" vflip="1" label="LED3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+<item itemtype="Ground" CircId="Ground-PD3" mainComp="false" Show_id="false" Show_Val="false" Pos="812,548" rotation="0" hflip="1" vflip="1" label="GND-D3" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Con-PD3-R" startpinid="mega32-1-PORTD3" endpinid="Resistor-PD3-lPin" pointList="608,424,640,424,640,472,700,472" />
+<item itemtype="Connector" uid="Con-R-LED3" startpinid="Resistor-PD3-rPin" endpinid="Led-PD3-lPin" pointList="732,472,764,472" />
+<item itemtype="Connector" uid="Con-LED3-GND" startpinid="Led-PD3-rPin" endpinid="Ground-PD3-Gnd" pointList="796,472,812,472,812,532" />
+
+<!-- ===== PD4 → LED4 ===== -->
+<item itemtype="Resistor" CircId="Resistor-PD4" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="716,496" rotation="0" hflip="1" vflip="1" label="R-D4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+<item itemtype="Led" CircId="Led-PD4" mainComp="false" Show_id="false" Show_Val="false" Pos="780,496" rotation="0" hflip="1" vflip="1" label="LED4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+<item itemtype="Ground" CircId="Ground-PD4" mainComp="false" Show_id="false" Show_Val="false" Pos="812,572" rotation="0" hflip="1" vflip="1" label="GND-D4" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Con-PD4-R" startpinid="mega32-1-PORTD4" endpinid="Resistor-PD4-lPin" pointList="608,432,640,432,640,496,700,496" />
+<item itemtype="Connector" uid="Con-R-LED4" startpinid="Resistor-PD4-rPin" endpinid="Led-PD4-lPin" pointList="732,496,764,496" />
+<item itemtype="Connector" uid="Con-LED4-GND" startpinid="Led-PD4-rPin" endpinid="Ground-PD4-Gnd" pointList="796,496,812,496,812,556" />
+
+<!-- ===== PD5 → LED5 ===== -->
+<item itemtype="Resistor" CircId="Resistor-PD5" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="716,520" rotation="0" hflip="1" vflip="1" label="R-D5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+<item itemtype="Led" CircId="Led-PD5" mainComp="false" Show_id="false" Show_Val="false" Pos="780,520" rotation="0" hflip="1" vflip="1" label="LED5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+<item itemtype="Ground" CircId="Ground-PD5" mainComp="false" Show_id="false" Show_Val="false" Pos="812,596" rotation="0" hflip="1" vflip="1" label="GND-D5" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Con-PD5-R" startpinid="mega32-1-PORTD5" endpinid="Resistor-PD5-lPin" pointList="608,440,640,440,640,520,700,520" />
+<item itemtype="Connector" uid="Con-R-LED5" startpinid="Resistor-PD5-rPin" endpinid="Led-PD5-lPin" pointList="732,520,764,520" />
+<item itemtype="Connector" uid="Con-LED5-GND" startpinid="Led-PD5-rPin" endpinid="Ground-PD5-Gnd" pointList="796,520,812,520,812,580" />
+
+<!-- ===== PD6 → LED6 ===== -->
+<item itemtype="Resistor" CircId="Resistor-PD6" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="716,544" rotation="0" hflip="1" vflip="1" label="R-D6" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+<item itemtype="Led" CircId="Led-PD6" mainComp="false" Show_id="false" Show_Val="false" Pos="780,544" rotation="0" hflip="1" vflip="1" label="LED6" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+<item itemtype="Ground" CircId="Ground-PD6" mainComp="false" Show_id="false" Show_Val="false" Pos="812,620" rotation="0" hflip="1" vflip="1" label="GND-D6" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Con-PD6-R" startpinid="mega32-1-PORTD6" endpinid="Resistor-PD6-lPin" pointList="608,448,640,448,640,544,700,544" />
+<item itemtype="Connector" uid="Con-R-LED6" startpinid="Resistor-PD6-rPin" endpinid="Led-PD6-lPin" pointList="732,544,764,544" />
+<item itemtype="Connector" uid="Con-LED6-GND" startpinid="Led-PD6-rPin" endpinid="Ground-PD6-Gnd" pointList="796,544,812,544,812,604" />
+
+<!-- ===== PD7 → LED7 ===== -->
+<item itemtype="Resistor" CircId="Resistor-PD7" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="716,568" rotation="0" hflip="1" vflip="1" label="R-D7" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+<item itemtype="Led" CircId="Led-PD7" mainComp="false" Show_id="false" Show_Val="false" Pos="780,568" rotation="0" hflip="1" vflip="1" label="LED7" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Red" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+<item itemtype="Ground" CircId="Ground-PD7" mainComp="false" Show_id="false" Show_Val="false" Pos="812,644" rotation="0" hflip="1" vflip="1" label="GND-D7" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Connector" uid="Con-PD7-R" startpinid="mega32-1-PORTD7" endpinid="Resistor-PD7-lPin" pointList="608,456,640,456,640,568,700,568" />
+<item itemtype="Connector" uid="Con-R-LED7" startpinid="Resistor-PD7-rPin" endpinid="Led-PD7-lPin" pointList="732,568,764,568" />
+<item itemtype="Connector" uid="Con-LED7-GND" startpinid="Led-PD7-rPin" endpinid="Ground-PD7-Gnd" pointList="796,568,812,568,812,628" />
+
+<!-- Wire: VCC → RST -->
+<item itemtype="Connector" uid="Connector-RST" startpinid="Fixed Voltage-1-outnod" endpinid="mega32-1-RST" pointList="476,244,608,244,608,264" />
+
+</circuit>

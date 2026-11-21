@@ -1,0 +1,15 @@
+This is version 9.00.90
+
++ Add feature:
+- PIC12F1572
+
++ Note :
+- Download the zip file.
+- Unzip and lauch the *.exe file. DON'T REMOVE Info FOLDER and other FILES !
+
++ Update new version :
+- Please overwrite Info folder.
+- Replace the *.exe file with new file.
+- User's settings is not removed.
+
+Thank you for your selection !

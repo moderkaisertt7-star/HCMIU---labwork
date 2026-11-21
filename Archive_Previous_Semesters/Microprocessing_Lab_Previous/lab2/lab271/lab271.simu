@@ -1,0 +1,30 @@
+<circuit version="1.0.0-SR1" rev="1402" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<!-- ATmega32 MCU @ 16 MHz -->
+<item itemtype="MCU" CircId="mega32-1" mainComp="false" Show_id="true" Show_Val="false" Pos="560,320" rotation="0" hflip="1" vflip="1" label="mega32-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="lab271/Debug/lab271.hex" Auto_Load="false" Rst_enabled="true" Ext_Osc="false" Wdt_enabled="false" />
+
+<!-- VCC for RST pull-up -->
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-1" mainComp="false" Show_id="false" Show_Val="false" Pos="460,244" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-1" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Out="false" Voltage="5 V" />
+
+<!-- Resistor 470 Ohm for LED (between PD0 and LED anode) -->
+<item itemtype="Resistor" CircId="Resistor-2" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="700,384" rotation="0" hflip="1" vflip="1" label="Resistor-2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="470 Ic" />
+
+<!-- LED on PD0 -->
+<item itemtype="Led" CircId="Led-3" mainComp="false" Show_id="false" Show_Val="false" Pos="764,384" rotation="0" hflip="1" vflip="1" label="Led-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="0.03 A" Resistance="0.6 Ic" />
+
+<!-- Ground for LED cathode -->
+<item itemtype="Ground" CircId="Ground-4" mainComp="false" Show_id="false" Show_Val="false" Pos="796,460" rotation="0" hflip="1" vflip="1" label="Ground-4" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<!-- Wire: PD0 → Resistor left pin -->
+<item itemtype="Connector" uid="Connector-5" startpinid="mega32-1-PORTD0" endpinid="Resistor-2-lPin" pointList="608,384,648,384,648,384,684,384" />
+
+<!-- Wire: Resistor right pin → LED anode (right = input side) -->
+<item itemtype="Connector" uid="Connector-6" startpinid="Resistor-2-rPin" endpinid="Led-3-lPin" pointList="716,384,748,384" />
+
+<!-- Wire: LED cathode → Ground -->
+<item itemtype="Connector" uid="Connector-7" startpinid="Led-3-rPin" endpinid="Ground-4-Gnd" pointList="780,384,796,384,796,444" />
+
+<!-- Wire: VCC → RST (keep MCU running) -->
+<item itemtype="Connector" uid="Connector-8" startpinid="Fixed Voltage-1-outnod" endpinid="mega32-1-RST" pointList="476,244,608,244,608,264" />
+
+</circuit>
